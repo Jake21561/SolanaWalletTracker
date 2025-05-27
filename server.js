@@ -5,8 +5,8 @@ const WebSocket = require('ws');
 const SOLSCAN_API_KEY = process.env.SOLSCAN_API_KEY;
 const DISCORD_WEBHOOK_URL = process.env.DISCORD_WEBHOOK_URL;
 const wallets = [
-  'wallet-address-1',
-  'wallet-address-2',
+  'DWcFRJrpzsrn624983W3qTuYccYnwLnL582gQ8CLohvY',
+  '6qbBUP12osvuRzW7L9JVpJCpqa9sAnKr3VJGQLaxTZ3x',
   // Add up to 500 wallet addresses here
 ];
 
