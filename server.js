@@ -4,11 +4,15 @@ const WebSocket = require('ws');
 
 const SOLSCAN_API_KEY = process.env.SOLSCAN_API_KEY;
 const DISCORD_WEBHOOK_URL = process.env.DISCORD_WEBHOOK_URL;
-const wallets = [
-  'DWcFRJrpzsrn624983W3qTuYccYnwLnL582gQ8CLohvY',
-  '6qbBUP12osvuRzW7L9JVpJCpqa9sAnKr3VJGQLaxTZ3x',
-  // Add up to 500 wallet addresses here
-];
+
+// Read wallets from the .env file
+const wallets = process.env.WALLETS ? process.env.WALLETS.split(',') : [];
+
+if (wallets.length === 0) {
+  console.error('No wallets provided. Please add wallet addresses to the `WALLETS` variable in the .env file.');
+  process.exit(1); // Exit the application if no wallets are provided
+}
+
 
 async function sendDiscordNotification(wallet, transaction) {
   try {
