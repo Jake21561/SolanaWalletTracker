@@ -1,3 +1,6 @@
+console.log('Environment Variables:', process.env);
+console.log('Wallets:', process.env.WALLETS);
+
 require('dotenv').config();
 const axios = require('axios');
 const WebSocket = require('ws');
